@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="main">
+  <div class="title">
+    <h3>People Also Ask</h3>
+    <!-- <p>
+      <small>A web app demo</small>
+    </p> -->
+  </div>
+
+  <div class="panel">
+    <!-- <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+    <label for="file-upload" id="file-drag" class="upload-box">
+      <div id="upload-caption">Drop image here or click to select</div>
+      <img id="image-preview" class="hidden" />
+    </label> -->
+    <input type="search" placeholder="search..." id="search_input" name="search_input">
+    <br/>
+    <h6 style="text-align: center; margin: 0; font-size: 14px; font-weight: 400;">Depth: </h6>
+    <span style="position: relative; top: -2px;">1</span><input type="range" id="range" name="vol" min="1" max="3" style="width: 470px; margin-bottom: 18px;"> <span style="position: relative; top: -2px;">3</span>
+    <br/>
+  </div>
+  <div style="margin-bottom: 2rem;">
+    <input type="button" value="Submit" class="button" onclick="submitImage();" />
+    <!-- <input type="button" value="Clear" class="button" onclick="clearImage();" /> -->
+  </div>
+
+  <div id="image">
+    <!-- <img id="image-display" /> -->
+    <div id="image-box"></div>
+    <div id="pred-result" class="hidden"></div>
+    <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+</div>
+
+<!-- create an HTML button to download the CSV file on click -->
+<button id="action" class="hidden" syle="background-color: green; border-radius: 9px;"> Download CSV </button>
+
+{% endblock %}
